@@ -1,0 +1,44 @@
+{
+  "prompts": [
+    {
+      "id": "sudoku_generator",
+      "label": "Generate unique-solution Sudoku puzzle",
+      "template": "Write a Python function that generates a Sudoku puzzle with exactly one unique solution. Use a backtracking algorithm to fill the grid, then remove cells based on difficulty (Easy: leave ≥45 clues, Medium: ≥32, Hard: ≥25). After removing cells, verify uniqueness by running the solver and confirming it finds exactly one solution."
+    },
+    {
+      "id": "testing_framework",
+      "label": "Set up pytest testing framework for Sudoku logic",
+      "template": "Set up a pytest testing framework for this Sudoku app. Create tests/test_generator.py that tests: (1) generated puzzles have exactly one solution, (2) difficulty levels produce the correct number of clues, (3) the solver correctly solves valid puzzles and returns None for unsolvable ones, (4) the board model correctly identifies conflicts."
+    },
+    {
+      "id": "unique_solution_check",
+      "label": "Verify puzzle has exactly one solution",
+      "template": "Write a Python function count_solutions(board) that uses backtracking to count the number of solutions for a given Sudoku board, stopping early once it finds more than 1. Use this in the puzzle generator to guarantee uniqueness before presenting the puzzle to the player."
+    },
+    {
+      "id": "leaderboard_storage",
+      "label": "Top-10 leaderboard with local JSON storage",
+      "template": "Write a Python module that manages a top-10 Sudoku leaderboard stored in a local JSON file (scores.json). Include functions to: load scores (with try/except fallback), save a new score (player name, time in seconds, difficulty, hint count), keep only the top 10 by fastest time, and return the formatted top-10 list."
+    },
+    {
+      "id": "box_coloring",
+      "label": "Alternate 3x3 box colors in tkinter grid",
+      "template": "In a tkinter 9×9 Sudoku grid, apply alternating background colors to the nine 3×3 boxes so they are visually distinct. The box color should be determined by (box_row + box_col) % 2 where box_row = row // 3 and box_col = col // 3. Use colors from the theme module so it works in both light and dark mode."
+    },
+    {
+      "id": "conflict_highlight",
+      "label": "Highlight row/col/box conflicts on cell entry",
+      "template": "After a player enters a digit in a Sudoku cell, check for conflicts in the same row, column, and 3×3 box. Highlight all conflicting cells (including the just-entered cell) with a red background. Clear conflict highlights from cells that are no longer in conflict after each update."
+    },
+    {
+      "id": "note_mode",
+      "label": "Note/pencil mode for candidate numbers",
+      "template": "Add a note mode to the Sudoku tkinter UI. When note mode is active, pressing a digit in an empty cell adds or removes it from that cell's candidate set instead of filling the cell. Display up to 9 small candidate digits in a 3×3 sub-grid within the cell. Toggling note mode off and entering a digit clears the candidates and fills the cell normally."
+    },
+    {
+      "id": "number_tracker",
+      "label": "Highlight all instances of a selected number",
+      "template": "Add a number tracker panel to the Sudoku UI: a row of buttons labeled 1–9. Clicking a number button highlights all cells containing that number on the board and shows how many of that number are still unplaced (9 minus the count of placed instances). Gray out the button when all 9 instances are placed."
+    }
+  ]
+}
